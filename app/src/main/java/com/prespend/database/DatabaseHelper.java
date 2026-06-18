@@ -69,6 +69,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<Expense> expenseList = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM " + TABLE_EXPENSES,
+                null
+        );
         return new ArrayList<>();
     }
 
