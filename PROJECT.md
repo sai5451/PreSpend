@@ -15,3 +15,16 @@
 - [ ] Expense History
 - [ ] QR Scanner
 - [ ] UPI Intent
+
+
+## Database Design
+
+Table: expenses
+
+- id
+- amount
+- category
+- paymentMode
+- merchant
+- timestamp
+- notes
