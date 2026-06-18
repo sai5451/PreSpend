@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.ContentValues;
 import com.prespend.models.Expense;
+import android.database.Cursor;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -65,6 +66,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public List<Expense> getAllExpenses() {
+        List<Expense> expenseList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
         return new ArrayList<>();
     }
 
