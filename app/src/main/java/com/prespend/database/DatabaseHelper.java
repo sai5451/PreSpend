@@ -1,4 +1,6 @@
 package com.prespend.database;
+import java.util.List;
+import java.util.ArrayList;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -60,6 +62,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return result;
+    }
+
+    public List<Expense> getAllExpenses() {
+        return new ArrayList<>();
     }
 
 
