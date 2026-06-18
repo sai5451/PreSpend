@@ -50,7 +50,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("merchant", expense.getMerchant());
         values.put("timestamp", expense.getTimestamp());
         values.put("notes", expense.getNotes());
-        return 0;
+
+        long result = db.insert(
+                TABLE_EXPENSES,
+                null,
+                values
+        );
+
+        db.close();
+
+        return result;
     }
 
 
