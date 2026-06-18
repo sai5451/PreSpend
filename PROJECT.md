@@ -5,10 +5,10 @@
 - [x] GitHub Setup
 - [x] Project Structure
 - [x] First Commit
-
-## Current Sprint
-- [ ] Expense Model
-- [ ] Database Setup
+- [x] Expense Model
+- [x] Database Setup
+- [x] Insert Expense
+- [x] Read Expenses
 
 ## MVP Features
 - [ ] Cash Expenses
