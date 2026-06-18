@@ -74,7 +74,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "SELECT * FROM " + TABLE_EXPENSES,
                 null
         );
-        return new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                Expense expense = new Expense();
+
+                expense.setId(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
+                expense.setAmount(cursor.getDouble(cursor.getColumnIndexOrThrow("amount")));
+                expense.setCategory(cursor.getString(cursor.getColumnIndexOrThrow("category")));
+                expense.setPaymentMode(cursor.getString(cursor.getColumnIndexOrThrow("paymentMode")));
+                expense.setMerchant(cursor.getString(cursor.getColumnIndexOrThrow("merchant")));
+                expense.setTimestamp(cursor.getString(cursor.getColumnIndexOrThrow("timestamp")));
+                expense.setNotes(cursor.getString(cursor.getColumnIndexOrThrow("notes")));
+
+                expenseList.add(expense);
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return expenseList;
     }
 
 
