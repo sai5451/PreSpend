@@ -11,12 +11,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_EXPENSES = "expenses";
 
+    private static final String CREATE_TABLE_EXPENSES =
+            "CREATE TABLE " + TABLE_EXPENSES + "(" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "amount REAL," +
+                    "category TEXT," +
+                    "paymentMode TEXT," +
+                    "merchant TEXT," +
+                    "timestamp TEXT," +
+                    "notes TEXT" +
+                    ")";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        db.execSQL(CREATE_TABLE_EXPENSES);
 
     }
 
