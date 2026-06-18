@@ -3,6 +3,8 @@ package com.prespend.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.content.ContentValues;
+import com.prespend.models.Expense;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -37,4 +39,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+
+    public long insertExpense(Expense expense) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return 0;
+    }
+
+
 }
