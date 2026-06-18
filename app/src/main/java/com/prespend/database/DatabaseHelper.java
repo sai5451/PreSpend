@@ -42,6 +42,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public long insertExpense(Expense expense) {
         SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("amount", expense.getAmount());
+        values.put("category", expense.getCategory());
+        values.put("paymentMode", expense.getPaymentMode());
+        values.put("merchant", expense.getMerchant());
+        values.put("timestamp", expense.getTimestamp());
+        values.put("notes", expense.getNotes());
         return 0;
     }
 
