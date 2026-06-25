@@ -65,4 +65,8 @@ public class Expense {
     private String merchant;
     private String timestamp;
     private String notes;
+
+    private String source;
+    private String paymentApp;
+    private String transactionId;
 }

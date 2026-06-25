@@ -20,6 +20,7 @@ import com.prespend.models.Expense;
 import java.util.List;
 
 import com.prespend.R;
+import com.prespend.repository.ExpenseRepository;
 
 public class ExpenseHistoryActivity extends AppCompatActivity {
 
@@ -31,9 +32,9 @@ public class ExpenseHistoryActivity extends AppCompatActivity {
 
         rvExpenses = findViewById(R.id.rvExpenses);
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        ExpenseRepository repository = new ExpenseRepository(this);
 
-        List<Expense> expenseList = databaseHelper.getAllExpenses();
+        List<Expense> expenseList = repository.getAllExpenses();
 
         ExpenseAdapter adapter = new ExpenseAdapter(expenseList);
 

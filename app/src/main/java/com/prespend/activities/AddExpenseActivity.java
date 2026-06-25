@@ -11,6 +11,7 @@ import com.prespend.models.Expense;
 import android.widget.Toast;
 
 import com.prespend.R;
+import com.prespend.repository.ExpenseRepository;
 
 public class AddExpenseActivity extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class AddExpenseActivity extends AppCompatActivity {
         etNotes = findViewById(R.id.etNotes);
         btnSave = findViewById(R.id.btnSave);
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        ExpenseRepository repository = new ExpenseRepository(this);
 
         btnSave.setOnClickListener(v -> {
             String amountText = etAmount.getText().toString();
@@ -53,7 +54,7 @@ public class AddExpenseActivity extends AppCompatActivity {
             expense.setTimestamp(String.valueOf(System.currentTimeMillis()));
 
 
-            long result = databaseHelper.insertExpense(expense);
+            long result = repository.insertExpense(expense);
 
             if (result != -1) {
                 etAmount.setText("");
